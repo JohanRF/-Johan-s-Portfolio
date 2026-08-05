@@ -1,0 +1,358 @@
+/*?======== GLOBAL ========*/
+/** TODOS LOS COLORES ESTAN DEFINIDOS */
+:root {
+	--bg: #F7F8FA;
+	--surface: #FFFFFF;
+	--text: #1A1D23;
+	--text-muted: #5C6370;
+	--accent: #4F6DF5;      /* color de marca: nav, títulos, links */
+	--accent-live: #16A34A; /* solo para botones "ver en vivo" */
+	--border: #E4E6EB;
+	
+	--font-display: 'Space Grotesk', sans-serif;
+	--font-body: 'Inter', sans-serif;
+	--font-mono: 'JetBrains Mono', monospace;
+}
+
+/** MODO OSCURO */
+html[data-theme="dark"] {
+	--bg: #0F1117;
+	--surface: #171A21;
+	--text: #E8EAED;
+	--text-muted: #9AA1AC;
+	--accent: #7C93FF;
+	--accent-live: #22C55E;
+	--border: #262A34;
+}
+html[data-theme="dark"] .iconMoon{display: none;}
+.iconSun { display: none; }
+html[data-theme="dark"] .iconSun{display: inline-block;}
+
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background: var(--bg);
+	color: var(--text);
+	font-family: var(--font-body);
+	line-height: 1.6;
+	transition: background 0.3s ease, color 0.3s ease;
+}
+
+h1,h2,h3 {
+	font-family: var(--font-display);
+	font-weight: 700;
+}
+
+a{
+	color: var(--accent);
+	text-decoration: none;
+}
+
+.container{
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 0 24px;
+}
+
+/*?======== NAVBAR ========*/
+header{
+	position: sticky;
+	top:0;
+	background: var(--surface);
+	border-bottom: 1px solid var(--border);
+	z-index: 100;
+}
+
+nav{
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 16px 24px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.logo{
+	font-family: var(--font-mono);
+	font-weight: 600;
+	font-size: 1.5rem;
+	color: var(--text);
+}
+.logo .prompt{ color: var(--accent);}
+.logo .cursor{
+	display: inline-block;
+	width: 9px;
+	height: 1.1rem;
+	background: var(--accent-live);
+	margin-left: 4px;
+	vertical-align: middle;
+	animation: blink 1s step-end infinite
+}
+@keyframes blink{
+	50% {opacity: 0;}
+}
+
+.navLinks{
+	display: flex;
+	gap: 28px;
+	list-style: none;
+	font-family: var(--font-mono);
+	font-size: 0.85rem;
+}
+.navLinks a{color: var(--text-muted);}
+.navLinks a:hover{color: var(--accent);}
+
+.themeToggle{
+	background: none;
+	border: 1px solid var(--border);
+	border-radius: 8px;
+	padding: 6px 12px;
+	font-size: 0.85rem;
+	color: var(--text);
+	cursor: pointer;
+	transition: .4s all;
+}
+
+.themeToggle:hover{
+	border-color: var(--accent);
+	transition: .4s all;
+}
+
+/*?======== HERO ========*/
+.hero{padding: 100px 0 80px;}
+.hero .eyebrow {
+	font-family: var(--font-mono);
+	color: var(--accent-live);
+	font-size: .85rem;
+	margin-bottom: 16px;
+}
+.hero .eyebrow::before { content: "● "; }
+.hero h1{
+	font-size: clamp(2.2rem ,5vw, 3.2rem);
+	line-height: 1.15;
+	margin-bottom: 20px;
+}
+
+/*?======== SECTION generales ========*/
+section{padding: 64px 0;}
+section h2{
+	font-size: 1.6rem;
+	margin-bottom: 32px;
+	display: flex;
+	align-items: baseline;
+	gap: 10px;
+}
+section h2 .tag{
+	font-family: var(--font-mono);
+	font-size: .8rem;
+	font-weight: 400;
+	color: var(--accent);
+}
+
+#proyectos{border-top: 1px solid var(--border);}
+#sobreMi{border-top: 1px solid var(--border);}
+#aprendiendo{border-top: 1px solid var(--border);}
+
+/*?======== SOBRE MI, Foto ========*/
+.sobreMiGrid{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 40px;
+}
+@media(max-width: 700px){
+	.sobreMiGrid{flex-direction: column; align-items: flex-start;}
+}
+
+.fotoWrapper{
+	position: relative;
+	width: 180px;
+	height: 180px;
+	flex-shrink: 0; /* Evita que la foto se achique si el texto es largo */
+}
+
+.fotoPerfil{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 16px;
+	border: 1px solid var(--border);
+	display: block;
+}
+/* Este bloque solo se ve si mi foto todavia no existe */
+.fotoPlaceholder{
+	display: none; /* el HTML lo cambia a "flex" si falla la imagen */
+	width: 100%;
+	height: 100%;
+	border-radius: 16px;
+	border: 1px dashed var(--border);
+	background: var(--surface);
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	font-family: var(--font-mono);
+	font-size: 0.8rem;
+	color: var(--text-muted);
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.sobreMiTexto{
+	color: var(--text-muted);
+	max-width: 560px;
+	font-family: var(--font-mono);
+}
+
+/*?======== TARJETAS DE PROYECTOS ========*/
+.proyectosGrid{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 24px;
+	padding-top: .8rem;
+}
+@media(max-width: 700px){
+	.proyectosGrid{
+		grid-template-columns: 1fr;
+	}
+}
+
+.proyectoCard{
+	background: var(--surface);
+	border: 1px solid var(--border);
+	border-radius: 14px;
+	overflow: hidden;
+	transition: transform .2s ease, border-color .2s ease;
+}
+.proyectoCard:hover{
+	transform: translateY(-4px);
+	border-color: var(--accent);
+}
+
+.proyectoPreview{
+	height: 160px;
+	background: linear-gradient(135deg, var(--accent) 0%, var(--bg) 150%);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: var(--font-mono);
+	color: white;
+	font-size: .85rem;
+	opacity: .85;
+}
+.previewImg{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: top;
+}
+.proyectoBody{padding: 20px;}
+.proyectoBody h3{font-size: 1.15rem; margin-bottom: 8px;}
+.proyectoBody p{
+	color: var(--text-muted);
+	font-size: .92rem;
+	margin-bottom: 14px;
+}
+
+.techBadges{
+	display: flex;
+	gap: 6px;
+	flex-wrap: wrap;
+	margin-bottom: 16px;
+}
+.techBadges span{
+	font-family: var(--font-mono);
+	font-size: .72rem;
+	padding: 3px 8px;
+	border-radius: 6px;
+	background: var(--bg);
+	border: 1px solid var(--border);
+	color: var(--text-muted);
+}
+
+.btnLive{
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	background: var(--accent-live);
+	color: #fff;
+	font-family: var(--font-mono);
+	font-size: .85rem;
+	font-weight: 600;
+	padding: 9px 16px;
+	border-radius: 8px;
+	transition: opacity .2s ease;
+}
+.btnLive:hover{opacity: .85; transition: .2s ease;}
+.btnLive::before{content: "▶"; font-size: .7rem;}
+
+/*?======== APRENDIENDO... ========*/
+.skillsList{display: flex; flex-wrap: wrap; gap: 10px;}
+
+.skillBadge{
+	font-family: var(--font-mono);
+	font-size: .85rem;
+	padding: 8px 14px;
+	border-radius: 20px;
+	border: 1px solid var(--border);
+	background: var(--surface);
+}
+
+/*?======== FOOTER ========*/
+footer{
+	border-top: 1px solid var(--border);
+	padding: 48px 0 28px;
+	text-align: center;
+}
+footer h2{
+	font-size: 1.3rem;
+	justify-content: center;
+	margin-bottom: 10px;
+}
+footer .footerSub{
+	color: var(--text-muted);
+	font-size: .9rem;
+	margin-bottom: 24px;
+}
+
+.socialIcons{
+	display: flex;
+	justify-content: center;
+	gap: 14px;
+	margin-bottom: 32px;
+}
+.socialIcon{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 42px;
+	height: 42px;
+	border-radius: 50%;
+	border: 1px solid var(--border);
+	color: var(--text-muted);
+	transition: border-color .2s ease, color .2s ease, transform .2s ease;
+}
+.socialIcon svg{width: 18px; height: 18px;}
+.socialIcon:hover{
+	border-color: var(--accent);
+	color: var(--accent);
+	transform: translateY(-2px);
+}
+/*! Por ahora, si quiero mostrarlo quito el disable en html. */
+.socialIcon.disabled{
+	opacity: .45;
+	cursor: default;
+	pointer-events: none;
+}
+
+.footerBottom{
+	color: var(--text-muted);
+	font-family: var(--font-mono);
+	font-size: .8rem;
+	padding-top: 20px;
+	border-top: 1px solid var(--border);
+}
