@@ -24,8 +24,8 @@ html[data-theme="dark"] {
 	--accent-live: #22C55E;
 	--border: #262A34;
 }
+.themeToggle .iconSun{ display: none; }
 html[data-theme="dark"] .iconMoon{display: none;}
-.iconSun { display: none; }
 html[data-theme="dark"] .iconSun{display: inline-block;}
 
 *{
