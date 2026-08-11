@@ -28,6 +28,9 @@ html[data-theme="dark"] {
 html[data-theme="dark"] .iconMoon{display: none;}
 html[data-theme="dark"] .iconSun{display: inline-block;}
 
+html{
+	scroll-behavior: smooth;
+}
 *{
 	box-sizing: border-box;
 	margin: 0;
@@ -250,8 +253,24 @@ section h2 .tag{
 	object-fit: cover;
 	object-position: top;
 }
-.proyectoBody{padding: 20px;}
-.proyectoBody h3{font-size: 1.15rem; margin-bottom: 8px;}
+.proyectoBody{
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	min-height: 220px; /* Aegurar que las tarjetas midan lo mismo */
+}
+.proyectoBody h3{font-size: 1.15rem; margin-bottom: 6px;}
+.proyectoTagline{
+	color: var(--text);
+	font-size: .92rem;
+	margin-bottom: 6px;
+	font-weight: 500;
+}
+.proyectoReto{
+	color: var(--text-muted);
+	font-size: .85rem;
+	margin-bottom: 14px;
+}
 .proyectoBody p{
 	color: var(--text-muted);
 	font-size: .92rem;
@@ -274,6 +293,12 @@ section h2 .tag{
 	color: var(--text-muted);
 }
 
+.proyectoBotones{
+	display: flex;
+	gap: 10px;
+	margin-top: auto;
+}
+.proyectoBotones .btnLive{margin-top: 0;} /* No empuja el boton, sino el contenedor */
 .btnLive{
 	display: inline-flex;
 	align-items: center;
@@ -286,11 +311,46 @@ section h2 .tag{
 	padding: 9px 16px;
 	border-radius: 8px;
 	transition: opacity .2s ease;
+	margin-top: auto; /* Empuja el boton siempre al fondo de la tarjeta */
+	align-self: flex-start;
 }
 .btnLive:hover{opacity: .85; transition: .2s ease;}
 .btnLive::before{content: "▶"; font-size: .7rem;}
 
-/*?======== APRENDIENDO... ========*/
+.btnCode{
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	background: transparent;
+	color: var(--text);
+	border: 1px solid var(--border);
+	font-family: var(--font-mono);
+	font-size: .85rem;
+	font-weight: 600;
+	padding: 9px 16px;
+	border-radius: 8px;
+	transition: border-color .2s ease;
+}
+.btnCode:hover{border-color: var(--accent);}
+
+/*?======== HABILIDADES ========*/
+.habilidadesIntro{
+	color: var(--text-muted);
+	font-size: .92rem;
+	margin-bottom: 24px;
+	max-width: 500px;
+}
+.skillsGroup{margin-bottom: 28px;}
+.skillsGroup:last-child{margin-bottom: 0;}
+.skillsGroupTitle{
+	font-family: var(--font-mono);
+	font-size: .85rem;
+	font-weight: 400;
+	color: var(--text-muted);
+	margin-bottom: 12px;
+	text-transform: uppercase;
+	letter-spacing: .03em;
+}
 .skillsList{display: flex; flex-wrap: wrap; gap: 10px;}
 
 .skillBadge{
@@ -300,6 +360,14 @@ section h2 .tag{
 	border-radius: 20px;
 	border: 1px solid var(--border);
 	background: var(--surface);
+}
+.skillBadge.solid{
+	border-color: var(--accent-live);
+	color: var(--text);
+}
+.skillBadge.progress{
+	border-style: dashed;
+	color: var(--text-muted);
 }
 
 /*?======== FOOTER ========*/

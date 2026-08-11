@@ -22,11 +22,11 @@
 				<span class="prompt">&gt;_</span>JrDesign <span class="cursor"></span>
 			</div>
 			<ul class="navLinks">
-				<li><a href="#">Inicio</a></li>
-				<li><a href="#">Sobre mí</a></li>
-				<li><a href="#">Proyectos</a></li>
-				<li><a href="#">Habilidades</a></li>
-				<li><a href="#">Contactame</a></li>
+				<li><a href="#inicio">Inicio</a></li>
+				<li><a href="#sobreMi">Sobre mí</a></li>
+				<li><a href="#proyectos">Proyectos</a></li>
+				<li><a href="#habilidades">Habilidades</a></li>
+				<li><a href="#contacto">Contactame</a></li>
 			</ul>
 			<button class="themeToggle" onclick="toggleTheme()">
 				<i class="fa-regular fa-moon iconMoon"></i>
@@ -39,8 +39,8 @@
 	<section id="inicio" class="hero">
 		<div class="container">
 			<p class="eyebrow">Disponible para proyectos freelance</p>
-			<h1>Desarrollador Frontend<br>en formación. Aprendiendo<br>contruyendo cosas reales.</h1>
-			<p>Emocionado de mostrar proyectos en producción que puedes probar ahora mismo. Javascript, HTMLL, CSS</p>
+			<h1>Desarrollador Frontend<br>Construyo interfaces que funcionan, no solo que se vean bien. HTML, CSS y JavaScript en producción.</h1>
+			<p>Cada proyecto de esta página puedes probarlo ahora mismo, no solo leerlo.</p>
 		</div>
 	</section>
 
@@ -56,9 +56,11 @@
 				</div>
 
 				<p class="sobreMiTexto">
-				Les habla Johan, para mí una gran página web es la combinación perfecta entre un diseño impecable y un "cerebro" bien estructurado. Empecé explorando interfaces para comprender sus estilos visuales, pero el verdadero cambio ocurrió cuando me sumergí en la arquitectura y la lógica interna que las hace funcionar.
+				Empecé por el diseño. Me quedé por la lógica. <br>
 
-				Disfruto el reto de transformar diseños en experiencias interactivas y funcionales. Enfrentar problemas complejos, analizar su estructura y construir soluciones código a código es lo que reafirmó mi meta de desarrollarme como Full Stack Engineer.
+				Explorando interfaces entendí cómo se ven las cosas. Metiéndome en el código entendí por qué funcionan. Ese cambio — de <u> "esto se ve bien"</u> a <u>"esto tiene sentido"</u> — es lo que me hizo elegir desarrollo frontend en serio. <br>
+
+				Hoy disfruto tomar un diseño y convertirlo en algo que la gente puede tocar, hacer clic, usar. Cada proyecto de abajo es un problema real que resolví de principio a fin.
 			</p>
 			</div>
 		</div>
@@ -74,14 +76,19 @@
 						<img src="img/napGuard-landingPage.png" alt="screenshot-landingPage-napguard" class="previewImg">
 					</div>
 					<div class="proyectoBody">
-						<h3>NapGuard Landing Page</h3>
-						<p>Landing page de mi aplicacion pomodoro NapGuard.</p>
+						<h3>NapGuard</h3>
+						<p class="proyectoTagline">Pomodoro para ayudarte a mantener el enfoque</p>
+						<p class="proyectoReto">Reto: aprender Electron desde cero.</p>
 						<div class="techBadges">
-								<span>HTML</span>
-								<span>CSS</span>
-								<span>JS</span>
+							<span>Electron</span>
+							<span>JavaScript</span>
+							<span>HTML</span>
+							<span>CSS</span>
 						</div>
-						<a href="https://johanrf.github.io/Napguard/" class="btnLive" target="_blank" rel="noopener noreferrer">Ver en vivo</a>
+						<div class="proyectoBotones">
+							<a href="https://johanrf.github.io/Napguard/" class="btnLive" target="_blank" rel="noopener noreferrer">Ver en vivo</a>
+							<a href="https://github.com/JohanRF/Napguard" class="btnCode" target="_blank" rel="noopener noreferrer">Ver código</a>
+						</div>
 					</div>
 				</article>
 
@@ -90,29 +97,46 @@
 						<img src="/img/retro-arcade-js.png" class="previewImg" alt="Game Arcade JS"> 
 					</div>
 					<div class="proyectoBody">
-						<h3>Game Arcade JS</h3>
-						<p>Una pagina que muestra varios juegos logicos y clasicos.</p>
+						<h3>Retro Arcade JS</h3>
+						<p class="proyectoTagline">Clásicos de los 90, jugables en el navegador</p>
+						<p class="proyectoReto">Reto: dominar clases, imports y estructura modular en JS.</p>
 						<div class="techBadges">
+							<span>JavaScript</span>
 							<span>HTML</span>
 							<span>CSS</span>
-							<span>JS</span>
 						</div>
-						<a href="https://johanrf.github.io/Retro-Arcade-JS/" class="btnLive" target="_blank" rel="noopener">Ver en vivo</a>
+						<div class="proyectoBotones">
+							<a href="https://johanrf.github.io/Retro-Arcade-JS/" class="btnLive" target="_blank" rel="noopener">Ver en vivo</a>
+							<a href="https://github.com/JohanRF/Retro-Arcade-JS" class="btnCode" target="_blank" rel="noopener">Ver código</a>
+						</div>
 					</div>
 				</article>
 			</div>
 		</div>
 	</section>
 
-	<!--  APRENDIENDO  -->
-	<section id="aprendiendo">
+	<!--  HABILIDADES  -->
+	<section id="habilidades">
 		<div class="container">
-			<h2>Aprendiendo <span class="tag">//en progreso</span></h2>
-			<div class="skillsList">
-				<span class="skillBadge">Javascript (ES6+)</span>
-				<span class="skillBadge">React - proximamente</span>
-				<span class="skillBadge">Git &amp; GitHub</span>
-				<span class="skillBadge">Responsive Design</span>
+			<h2>Habilidades <span class="tag">// donde estoy</span></h2>
+			<p class="habilidadesIntro">Todo lo de abajo lo aprendi construyecto los proyectos de esta pagina, no solo viendo tutoriales.</p>
+			<div class="skillsGroup">
+				<h3 class="skillsGroupTitle">Con base sólida...</h3>
+				<div class="skillsList">
+					<span class="skillBadge solid">HTML5</span>
+					<span class="skillBadge solid">CSS3 (Flexbox &amp; Grid)</span>
+					<span class="skillBadge solid">Javascript (ES6+)</span>
+					<span class="skillBadge solid">Git &amp; Github</span>
+				</div>
+			</div>
+
+			<div class="skillsGroup">
+				<h3 class="skillsGroupTitle">En progreso ahora mismo...</h3>
+				<div class="skillsList">
+					<span class="skillBadge progress">React</span>
+					<span class="skillBadge progress">Async/Awit &amp; Fetch API</span>
+					<span class="skillBadge progress">Electron</span>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -121,11 +145,11 @@
 	<footer id="contacto">
 		<div class="container">
 			<h2>¿Quieres saber más de mí?</h2>
-			<p class="footerSub">Tambien de mejorar mi logica a la programción, tambien puedes pasar por mis redes sociales.</p>
+			<p class="footerSub">También sigo mejorando mi lógica de programación. Si quieres, puedes pasar por mis redes sociales.</p>
 
 			<div class="socialIcons">
 					<!-- GitHub -->
-				<a href="#" class="socialIcon" target="_blank" rel="noopener" aria-label="GitHub">
+				<a href="https://github.com/JohanRF" class="socialIcon" target="_blank" rel="noopener" aria-label="GitHub">
 					<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.5 0 12.3c0 5.44 3.44 10.05 8.21 11.68.6.12.82-.27.82-.6 0-.29-.01-1.06-.02-2.08-3.34.75-4.04-1.65-4.04-1.65-.55-1.44-1.34-1.83-1.34-1.83-1.09-.77.08-.75.08-.75 1.2.09 1.84 1.27 1.84 1.27 1.07 1.87 2.81 1.33 3.5 1.02.11-.79.42-1.33.76-1.64-2.67-.31-5.47-1.38-5.47-6.14 0-1.36.47-2.46 1.25-3.33-.13-.31-.54-1.57.12-3.28 0 0 1.02-.33 3.34 1.27a11.4 11.4 0 0 1 6.08 0c2.32-1.6 3.34-1.27 3.34-1.27.66 1.71.25 2.97.12 3.28.78.87 1.25 1.97 1.25 3.33 0 4.77-2.81 5.82-5.48 6.13.43.38.81 1.14.81 2.3 0 1.66-.02 3-.02 3.41 0 .33.22.72.83.6C20.57 22.34 24 17.73 24 12.3 24 5.5 18.63 0 12 0z"/></svg>
 				</a>
 
