@@ -340,8 +340,16 @@ section h2 .tag{
 	margin-bottom: 24px;
 	max-width: 500px;
 }
-.skillsGroup{margin-bottom: 28px;}
-.skillsGroup:last-child{margin-bottom: 0;}
+.skillsGroup{
+	margin-bottom: 28px;
+	padding-bottom: 28px;
+	border-bottom: 1px solid var(--border);
+}
+.skillsGroup:last-child{
+	margin-bottom: 0;
+	padding-bottom: 0;
+	border-bottom: none;
+}
 .skillsGroupTitle{
 	font-family: var(--font-mono);
 	font-size: .85rem;
@@ -351,6 +359,7 @@ section h2 .tag{
 	text-transform: uppercase;
 	letter-spacing: .03em;
 }
+.habilidadesIntro{margin-bottom: 14px;}
 .skillsList{display: flex; flex-wrap: wrap; gap: 10px;}
 
 .skillBadge{
@@ -404,7 +413,9 @@ footer .footerSub{
 	color: var(--text-muted);
 	transition: border-color .2s ease, color .2s ease, transform .2s ease;
 }
-.socialIcon svg{width: 18px; height: 18px;}
+.fa-brands, .fa-solid{
+	font-size: 1.2rem;
+}
 .socialIcon:hover{
 	border-color: var(--accent);
 	color: var(--accent);
